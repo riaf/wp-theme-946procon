@@ -1,0 +1,23 @@
+{
+  "name": "wp-theme-946procon",
+  "version": "1.0.0",
+  "homepage": "https://github.com/riaf/wp-theme-946procon",
+  "authors": [
+    "Keisuke SATO <riaf@me.com>"
+  ],
+  "main": "dist/style.css",
+  "license": "BSD",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bourbon": "3.2.x",
+    "neat": "1.5.x",
+    "normalize-scss": "3.x"
+  }
+}

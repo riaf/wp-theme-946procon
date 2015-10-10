@@ -1,0 +1,268 @@
+/*!
+ Theme Name:   946procon
+ Theme URI:    http://github.com/riaf/wp-theme-946procon
+ Description:  Theme for Kushiro U-16 Procon
+ Author:       Keisuke SATO
+ Author URI:   http://riaf.jp
+ Template:     twentythirteen
+ Version:      1.0.0
+ Tags:         light private
+ Text Domain:  946procon
+*/
+
+
+$blue: #3ac4cf;
+$lightGray: #c3c3c3;
+$white: #ffffff;
+$darkGray: #4b4b4b;
+$red: #f41333;
+
+$fg-column: 60px;             // Column Width
+$fg-gutter: 20px;             // Gutter Width
+$fg-max-columns: 12;          // Total Columns For Main Container
+$gw-column: $fg-column;       // Column Width
+$gw-gutter: $fg-gutter;       // Gutter Width
+
+/*
+@import url("../twentythirteen/style.css");
+*/
+
+@import "normalize";
+@import "_bourbon";
+@import "_neat-helpers";
+
+// Change the grid settings
+$column: 60px;
+$gutter: 20px;
+$grid-columns: 12;
+$max-width: em(1088);
+
+// Define your breakpoints
+$pc: new-breakpoint(min-width 769px 12);
+$tablet: new-breakpoint(max-width 768px 12);
+$mobile: new-breakpoint(max-width 480px 4);
+@import "_neat";
+
+a {
+  color: $blue;
+}
+a:hover {
+  color: darken($blue, 10%);
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.screen-reader-text {
+  display: none;
+}
+.alignright {
+  float: right;
+  margin: 5px 0 5px 20px;
+}
+
+body {
+  @include media($tablet) {
+    padding: 0 10px;
+  }
+}
+
+#page {
+  margin-bottom: 30px;
+  @include outer-container;
+
+  #main {
+    @include span-columns(9);
+    @include media($tablet) {
+      @include span-columns(12);
+    }
+  }
+  #colophon {
+    @include span-columns(3);
+    @include media($tablet) {
+      @include span-columns(12);
+    }
+  }
+}
+
+.site-header {
+  position: relative;
+  margin-bottom: 15px;
+
+  .site-title {
+    display: block;
+    width: 329px;
+    height: 60px;
+    text-indent: -32767px;
+    background: url(images/logo.svg) no-repeat;
+
+  }
+  .site-description {
+    display: none;
+  }
+  &:after {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 340px;
+    content: "";
+    width: 60px;
+    height: 60px;
+    background: url(images/icon-date.svg) no-repeat;
+  }
+
+  .navbar {
+    font-size: 13px;
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .nav-menu {
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      a {
+        color: $darkGray;
+        text-decoration: none;
+      }
+
+      &>ul {
+        width: 100%;
+        background: $lightGray;
+        display: table;
+        table-layout: fixed;
+        border: 1px solid $darkGray;
+
+        &>li {
+          position: relative;
+          display: table-cell;
+          text-align: center;
+          border-left: 1px solid $darkGray;
+
+          a {
+            display: block;
+            width: 100%;
+            padding: .3em 0;
+          }
+
+          &.current_page_item {
+            background: $darkGray;
+            & > a {
+              color: $white;
+            }
+          }
+          &:hover {
+            background: darken($lightGray, 5%);
+          }
+          &.page_item_has_children {
+            .children {
+              width: 100%;
+              display: none;
+              position: absolute;
+              text-align: left;
+              background: #fff;
+              border: 1px solid $lightGray;
+              z-index: 10;
+
+              li a:before {
+                display: inline;
+                margin: 0 .5em;
+                content: '\00BB';
+              }
+            }
+
+            &:hover .children {
+              display: block;
+            }
+          }
+
+          &:first-child {
+            border-left: none;
+          }
+        }
+      }
+    }
+
+    .search-form {
+      @include media($pc) {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      @include media($tablet) {
+        text-align: right;
+        margin: .5em 0;
+      }
+    }
+  }
+}
+
+#content {
+  .page.type-page {
+    .entry-header {
+      display: none;
+    }
+  }
+}
+
+.sidebar-container {
+  // border-left: 1px dotted $lightGray;
+
+  h3 {
+    color: $red;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: .5em;
+      line-height: 1.2;
+    }
+  }
+}
+
+body.blog,
+body.single-post {
+  .post {
+    margin-bottom: 1.5em;
+    padding-bottom: 1.5em;
+    border-bottom: 1px dotted $lightGray;
+
+    .entry-title {
+      font-size: 24px;
+      color: $red;
+
+      a {
+        color: $red;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .entry-meta {
+      font-size: 12px;
+      text-align: right;
+
+      span {
+        margin-left: 1.5em;
+      }
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

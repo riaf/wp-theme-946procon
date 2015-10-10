@@ -1,0 +1,28 @@
+{
+  "name": "wp-theme-946procon",
+  "version": "1.0.0",
+  "description": "wp-theme-946procon ==================",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/riaf/wp-theme-946procon.git"
+  },
+  "keywords": [
+    "WordPress"
+  ],
+  "author": "Keisuke SATO <riaf@me.com>",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/riaf/wp-theme-946procon/issues"
+  },
+  "homepage": "https://github.com/riaf/wp-theme-946procon",
+  "devDependencies": {
+    "coffee-script": "^1.7.1",
+    "gulp": "^3.8.7",
+    "gulp-sass": "^0.7.2",
+    "gulp-zip": "^1.0.0"
+  }
+}
