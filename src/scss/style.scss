@@ -5,7 +5,7 @@
  Author:       Keisuke SATO
  Author URI:   http://riaf.jp
  Template:     twentythirteen
- Version:      1.2015.1
+ Version:      1.2015.2
  Tags:         light private
  Text Domain:  946procon
 */
@@ -16,6 +16,7 @@ $lightGray: #c3c3c3;
 $white: #ffffff;
 $darkGray: #4b4b4b;
 $red: #f41333;
+$yellow: #ffd25a;
 
 $fg-column: 60px;             // Column Width
 $fg-gutter: 20px;             // Gutter Width
@@ -44,10 +45,10 @@ $mobile: new-breakpoint(max-width 480px 4);
 @import "_neat";
 
 a {
-  color: $blue;
+  color: $red;
 }
 a:hover {
-  color: darken($blue, 10%);
+  color: darken($red, 10%);
 }
 
 img {
@@ -98,7 +99,6 @@ body {
     height: 60px;
     text-indent: -32767px;
     background: url(images/logo.svg) no-repeat;
-
   }
   .site-description {
     display: none;
@@ -112,6 +112,17 @@ body {
     width: 60px;
     height: 60px;
     background: url(images/icon-date.svg) no-repeat;
+  }
+  @include media($mobile) {
+    .site-title {
+      width: 329px * 0.6;
+      height: 60px * 0.6;
+    }
+    &:after {
+      left: 340px * 0.6;
+      width: 60px * 0.6;
+      height: 60px * 0.6;
+    }
   }
 
   .navbar {
@@ -134,16 +145,16 @@ body {
 
       &>ul {
         width: 100%;
-        background: $lightGray;
+        background: $yellow;
         display: table;
         table-layout: fixed;
-        border: 1px solid $darkGray;
+        border: 1px solid darken($yellow, 5%);
 
         &>li {
           position: relative;
           display: table-cell;
           text-align: center;
-          border-left: 1px solid $darkGray;
+          border-left: 1px solid darken($yellow, 5%);
 
           a {
             display: block;
@@ -152,13 +163,10 @@ body {
           }
 
           &.current_page_item {
-            background: $darkGray;
-            & > a {
-              color: $white;
-            }
+            background: darken($yellow, 5%);
           }
           &:hover {
-            background: darken($lightGray, 5%);
+            background: darken($yellow, 5%);
           }
           &.page_item_has_children {
             .children {
@@ -167,7 +175,7 @@ body {
               position: absolute;
               text-align: left;
               background: #fff;
-              border: 1px solid $lightGray;
+              border: 1px solid darken($yellow, 5%);
               z-index: 10;
 
               li a:before {
@@ -215,7 +223,8 @@ body {
   // border-left: 1px dotted $lightGray;
 
   h3 {
-    color: $red;
+    color: $darkGray;
+    font-size: 26px;
   }
 
   ul {
@@ -237,11 +246,11 @@ body.single-post {
     border-bottom: 1px dotted $lightGray;
 
     .entry-title {
-      font-size: 24px;
-      color: $red;
+      font-size: 38px;
+      color: $darkGray;
 
       a {
-        color: $red;
+        color: $darkGray;
         text-decoration: none;
 
         &:hover {
