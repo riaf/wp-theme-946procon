@@ -1,6 +1,6 @@
 {
   "name": "wp-theme-946procon",
-  "version": "1.0.0",
+  "version": "1.2015.1",
   "description": "wp-theme-946procon ==================",
   "private": true,
   "scripts": {
@@ -20,9 +20,9 @@
   },
   "homepage": "https://github.com/riaf/wp-theme-946procon",
   "devDependencies": {
-    "coffee-script": "^1.7.1",
-    "gulp": "^3.8.7",
-    "gulp-sass": "^0.7.2",
-    "gulp-zip": "^1.0.0"
+    "coffee-script": "^1.10.0",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-zip": "^3.0.2"
   }
 }
