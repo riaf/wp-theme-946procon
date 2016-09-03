@@ -103,16 +103,6 @@ body {
   .site-description {
     display: none;
   }
-  &:after {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 340px;
-    content: "";
-    width: 60px;
-    height: 60px;
-    background: url(images/icon-date.svg) no-repeat;
-  }
   @include media($mobile) {
     .site-title {
       width: 329px * 0.6;
